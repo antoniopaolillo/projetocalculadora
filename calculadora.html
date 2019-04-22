@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>   
+   <head>
+   <!--Importa o JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+		<script type="text/javascript">
+			
+         function checar(check) {
+            for (var a = 0; a < check.length; a++) {
+		      var ch = check.charAt(a);
+            if (ch < "0" || ch > "9") {
+			   if (ch != "/" && ch != "*" && ch != "+" && ch != "-" && ch != "."
+				   && ch != "(" && ch!= ")" && ch != "%") {
+				alert("Comando inválido!")
+				return false
+				}
+			}
+		}
+		return true
+   }  
+         function apagarUm(input) {
+	input.value = input.value.substring(0, input.value.length - 1)}      
+   
+         function calcular(form){
+            calculadora.display.value = eval(calculadora.display.value)
+         }
+	
+         function cosseno(form) {
+            calculadora.display.value = Math.cos(calculadora.display.value * Math.PI/180);
+ 
+    
+} 
+         function seno(form) {
+	calculadora.display.value = Math.sin(calculadora.display.value * Math.PI/180)
+}
+         function tangente(form) {
+	calculadora.display.value = Math.tan(calculadora.display.value * Math.PI/180)
+} 
+         function sqrt(form) {
+	calculadora.display.value = Math.sqrt(calculadora.display.value)
+}      
+         function pow(form) {
+            function base{
+            for(var b = 0; b < form.length; b++){
+            var checando = form.charAt(b);
+            if (checando = '^'){
+               
+            }
+           
+           
+           
+                                                }
+                        }  
+                           }        
+        
+        
+        
+        function logaritimo(form) {
+	calculadora.display.value = Math.log(calculadora.display.value)
+}  
+         function porcent(input){
+            vari = input.value
+            input.value = input.value + "%";
+         }   
+                 
+
+
+         </script>
+   </head>
+   <body>
+      <form name="calculadora">
+         <table>
+            <tr>
+               <td colspan="4">
+                  <input type="text" name="display" id="display">
+               </td>
+            </tr>
+            <tr>
+               <td><input type="button" class= "funcao"   name="limparUm"    value="C"  onclick="apagarUm(calculadora.display)"></td> 
+               <td><input type="button" class ="funcao"   name="limpar"      value="AC" onclick="calculadora.display.value = ''"></td>
+               <td><input type="button" class ="funcao"   name="parenteses1" value="("  onclick="calculadora.display.value += '('"></td>
+               <td><input type="button" class ="funcao"   name="parenteses2" value=")"  onclick="calculadora.display.value += ')'"></td>
+            </tr>
+            <tr>
+               <td><input type="button" class ="operador" name="porc" value="%" onclick="porcent(calculadora.display)"></td>
+               <td><input type="button" class ="numero"   name="um"   value="1" onclick="calculadora.display.value += '1'"></td>
+               <td><input type="button" class ="numero"   name="dois" value="2" onclick="calculadora.display.value += '2'"></td>
+               <td><input type="button" class ="numero"   name="tres" value="3" onclick="calculadora.display.value += '3'"></td>
+               <td><input type="button" class ="operador" name="mais" value="+" onclick="calculadora.display.value += '+'"></td>
+            </tr>
+            <tr>
+               <td><input type="button" class ="numero"   name="quatro" value="4" onclick="calculadora.display.value += '4'"></td>
+               <td><input type="button" class ="numero"   name="cinco"  value="5" onclick="calculadora.display.value += '5'"></td>
+               <td><input type="button" class ="numero"   name="seis"   value="6" onclick="calculadora.display.value += '6'"></td>
+               <td><input type="button" class ="operador" name="menos"  value="-" onclick="calculadora.display.value += '-'"></td>
+            </tr>
+            <tr>
+               <td><input type="button" class ="numero"   name="sete"  value="7" onclick="calculadora.display.value += '7'"></td>
+               <td><input type="button" class ="numero"   name="oito"  value="8" onclick="calculadora.display.value += '8'"></td>
+               <td><input type="button" class ="numero"   name="nove"  value="9" onclick="calculadora.display.value += '9'"></td>
+               <td><input type="button" class ="operador" name="vezes" value="x" onclick="calculadora.display.value += '*'"></td>
+            </tr>
+            <tr>
+               <td><input type="button" class ="numero"   name="ponto"   value="."   onclick="calculadora.display.value += '.'"></td>
+               <td><input type="button" class ="numero"   name="zero"    value="0"   onclick="calculadora.display.value += '0'"></td>
+               <td><input type="button" class ="numero"   name="result"  value="="   onclick="if(checar(calculadora.display.value)){calcular(calculadora.display.value)}" ></td>
+               <td><input type="button" class ="operador" name="divisao" value="/"   onclick="calculadora.display.value += '/'"></td>
+               <td><input type="button" class ="operador" name="expoent" value="x&#94;" onclick="if(checar(calculadora.display.value)){exp(calculadora.display.value)}"></td>
+               <td><input type="button" class ="operador" name="result"  value="tan"   onclick="if(checar(calculadora.display.value)){tangente(calculadora.display.value)}" ></td>
+               <td><input type="button" class ="operador" name="result"  value="sin"   onclick="if(checar(calculadora.display.value)){seno(calculadora.display.value)}" ></td>
+               <td><input type="button" class ="operador" name="result"  value="cos"   onclick="if(checar(calculadora.display.value)){cosseno(calculadora.display.value)}" ></td>
+               <td><input type="button" class ="operador" name="result"  value="&radic;"   onclick="if(checar(calculadora.display.value)){sqrt(calculadora.display.value)}" ></td>
+               <td><input type="button" class ="operador" name="result"  value="ln"   onclick="if(checar(calculadora.display.value)){logaritimo(calculadora.display.value)}" ></td>
+            </tr>
+         </table>
+      </form>
+   </body>
+<html>
