@@ -40,18 +40,21 @@
 	calculadora.display.value = Math.sqrt(calculadora.display.value)
 }      
          function pow(form) {
-            function base{
+            
             for(var b = 0; b < form.length; b++){
             var checando = form.charAt(b);
-            if (checando = '^'){
-               
+            if (checando != '^'){
+               calculadora.display.value = calculadora.display.value + '^'
+            } else  {
+               calculadora.display.value = Math.pow(calculadora.display.value.substring(antes do '^'), calculadora.display.value.substring(depois do '^'))
+
             }
            
            
            
                                                 }
                         }  
-                           }        
+                                   
         
         
         
